@@ -1,6 +1,10 @@
 name = "nexerocapital"
 compatibility_date = "2026-06-11"
 account_id = "d84efe5b0c02eb230354b34a1bf2c742"
+workers_dev = true
+
+[site]
+bucket = "./dist"
 
 [vars]
 # Add any worker env vars here if needed
