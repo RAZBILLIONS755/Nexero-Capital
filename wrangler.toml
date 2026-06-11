@@ -1,0 +1,6 @@
+name = "nexerocapital"
+compatibility_date = "2026-06-11"
+account_id = "d84efe5b0c02eb230354b34a1bf2c742"
+
+[vars]
+# Add any worker env vars here if needed
