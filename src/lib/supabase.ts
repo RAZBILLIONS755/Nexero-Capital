@@ -1,6 +1,14 @@
 /// <reference types="vite/client" />
 
-import { createClient } from '@supabase/supabase-js'
+// We are using the global `supabase` variable from the CDN script
+// @ts-ignore
+const supabaseGlobal: any = window.supabase
+
+if (!supabaseGlobal) {
+  throw new Error('Supabase not loaded. Check the CDN script in index.html.')
+}
+
+const { createClient } = supabaseGlobal
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
