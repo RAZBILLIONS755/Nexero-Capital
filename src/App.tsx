@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAuthStore } from './store/authStore';
 import { useAdminStore } from './store/adminStore';
+import { useDataStore } from './store/dataStore';
 import AdminLogin from './pages/admin/AdminLogin';
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
@@ -9,8 +10,8 @@ import RegisterPage from './pages/RegisterPage';
 import DashboardLayout from './components/DashboardLayout';
 import DashboardHome from './pages/dashboard/DashboardHome';
 import DepositPage from './pages/dashboard/DepositPage';
-import InvestPage from './pages/dashboard/InvestPage';
 import ClaimsPage from './pages/dashboard/ClaimsPage';
+import InvestPage from './pages/dashboard/InvestPage';
 import WithdrawPage from './pages/dashboard/WithdrawPage';
 import TasksPage from './pages/dashboard/TasksPage';
 import ReferralsPage from './pages/dashboard/ReferralsPage';
@@ -75,6 +76,11 @@ export default function App() {
     } catch (e) {
       // ignore
     }
+
+    // Fetch investment plans from Supabase
+    useDataStore.getState().fetchInvestmentPlans().catch(err => {
+      console.error('Failed to fetch investment plans on app startup:', err);
+    });
   }, []);
   return (
     <BrowserRouter>
