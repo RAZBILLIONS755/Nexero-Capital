@@ -8,9 +8,10 @@ Cloudflare Pages deployment checklist
 
 - Connect your GitHub repository to Cloudflare Pages.
 - Branch: `main` (or your production branch).
-- Build command: `npm run build`
+- Build command: `npm install && npm run build`
 - Build output directory: `dist`
 - Node version: use the default or set to a modern LTS (18+).
+- Do not use a custom deploy command such as `npx wrangler deploy`.
 
 3. SPA routing
 

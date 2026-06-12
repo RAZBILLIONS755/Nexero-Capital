@@ -25,6 +25,7 @@ npm run build
 Deployment
 
 This project is configured for static hosting (Cloudflare Pages, Vercel, Netlify).
+Do not use `npx wrangler deploy` or `wrangler.toml` for this app.
 See `CLOUDFLARE_DEPLOY.md` for Cloudflare Pages-specific instructions.
 
 Environment
