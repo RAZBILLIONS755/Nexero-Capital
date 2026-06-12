@@ -4,6 +4,10 @@
 // @ts-ignore
 const supabaseGlobal: any = window.supabase
 
+// Debug logs
+console.log('Supabase debug: window.supabase =', supabaseGlobal)
+console.log('Supabase debug: window =', window)
+
 if (!supabaseGlobal) {
   throw new Error('Supabase not loaded. Check the CDN script in index.html.')
 }
